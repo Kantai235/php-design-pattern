@@ -1,0 +1,17 @@
+name: CI for PHP Design Pattern
+
+on:
+  push:
+    branches:
+    - master
+    - development
+
+jobs:
+  design-pattern-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+    - name: Execute Tests
+      run: vendor/bin/phpunit

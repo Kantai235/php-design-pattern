@@ -1,0 +1,20 @@
+{
+    "name": "kantai235/php-design-pattern",
+    "authors": [
+        {
+            "name": "Kantai",
+            "email": "kantai.developer@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.2",
+        "php": "^7.4",
+        "codedungeon/phpunit-result-printer": "^0.28.0"
+    },
+    "autoload": {
+        "classmap": [
+            "DesignPatterns/",
+            "Tests/"
+        ]
+    }
+}
