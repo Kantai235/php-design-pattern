@@ -124,6 +124,17 @@ class TurnipsPool implements Countable
 }
 ```
 
+## 額外補充
+### Countable
+繼承 `Countable` 這個類別可以使用 `count()` 這個方法，因此需要實作它。
+```php
+class Countable {
+    /* Methods */
+    abstract public count ( void ) : int
+}
+```
+- 官方文件：[PHP: Countable - Manual](https://www.php.net/manual/en/class.countable.php)
+
 ## 測試
 最後為了測試我們挖很深的大頭菜池是否能夠養大頭菜，所以我們有兩組測試要做：
 1. 測試是否能夠正常的新增 10 組大頭菜，並且把大頭菜拿出 2 組後，檢查池子裡面是否剩下 8 組大頭菜，然後比較一下拿出來的這 2 組是不是兩個不同的大頭菜，最後比較一下大頭菜池子裡的大頭菜價格是不是正確的。

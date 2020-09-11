@@ -7,7 +7,7 @@
 命令模式，是一種將行為封裝起來裹上美好糖衣的一種模式，並將接收與執行分離出來，就有點像是把大頭菜買賣這件事，如果把買大頭菜、賣大頭菜這兩個動作封裝起來，變成一個命令，分開去執行。
 
 ## [疊代器模式 Iterator Pattern](/DesignPatterns/Behavioral/IteratorPattern)
-
+疊代器模式，提供一種方法來簡單控制一個集合物件，這段過程並不會暴露該物件的來源或修改它，就有點像是你的背包(Bag)一樣，疊代器(Iterator)可以簡單控制你背包中的大頭菜(Turnips)以及鈴錢(Bells)。
 
 ## [中介者模式 Mediator Pattern](/DesignPatterns/Behavioral/MediatorPattern)
 

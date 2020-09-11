@@ -119,6 +119,17 @@ class FlyweightFactory implements Countable
 }
 ```
 
+## 額外補充
+### Countable
+繼承 `Countable` 這個類別可以使用 `count()` 這個方法，因此需要實作它。
+```php
+class Countable {
+    /* Methods */
+    abstract public count ( void ) : int
+}
+```
+- 官方文件：[PHP: Countable - Manual](https://www.php.net/manual/en/class.countable.php)
+
 ## 測試
 最後我們要對享元物件、工廠進行簡單的測試，假設我們已經擁有了許多大頭菜，那麼我們有幾個需要做的檢查事項：
 1. 依序塞入享元，並且計算該次塞入的大頭菜跟紀錄所算出來的鈴錢是否相符。
