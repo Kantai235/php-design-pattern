@@ -1,6 +1,7 @@
 ![Banner](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/MediatorPattern/Banner.png)
 
 # 中介者模式 Mediator Pattern
+中介者模式，在兩個不同的封裝物件之間，作為中間進行交互的模式，可以減少物件之間的依賴關係，並且降低耦合性問題，
 
 ## UML
 ![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/MediatorPattern/UML.png)
