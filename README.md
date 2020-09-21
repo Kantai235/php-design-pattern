@@ -60,4 +60,5 @@ $ ./vendor/bin/phpunit tests
 ---
 # 技術部落格
 
+- [乾太₍₍ ◝(･◡･)◟ ⁾⁾ GitHub Pages 技術部落格文章](https://kantai235.github.io)
 - [設計模式不難，找回快樂而已，以大頭菜為例。 :: 第 12 屆 iT 邦幫忙鐵人賽](https://ithelp.ithome.com.tw/users/20129458/ironman/3119)

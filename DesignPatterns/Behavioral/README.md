@@ -13,7 +13,7 @@
 中介者模式，在兩個不同的封裝物件之間，作為中間進行交互的模式，可以減少物件之間的依賴關係，並且降低耦合性問題，舉例來說有背包(Bag)與商店(Store)這兩個物件，你會從背包(Bag)當中拿出鈴錢(Bells)去商店(Store)購買大頭菜(Turnips)，但它們應該要各自其職，不要太過於互相依賴，因此你會需要有個中間控制這些物件的中介者(Mediator)。
 
 ## [備忘錄模式 Memento Pattern](/DesignPatterns/Behavioral/MementoPattern)
-
+備忘錄模式，在不破壞封裝物件的前提之下，提供物件一個「皇后殺手 第三爆彈：敗者成塵」的能力，物件在極度絕望的狀態下，把當前物件炸光光，並令時間往前倒退至上一個時空紀錄點的設計模式，跟吉良吉影的不同點在於命運會跟著被改變，被破壞的東西會恢復原狀。
 
 ## [空物件模式 Null Object Pattern](/DesignPatterns/Behavioral/NullObjectPattern)
 
