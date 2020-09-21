@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Behavioral\CommandPattern;
 
+use InvalidArgumentException;
+
 /**
  * Class Receiver.
  */
@@ -20,12 +22,14 @@ class Receiver
     /**
      * @param int $price
      * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
     public function buy(int $price, int $count)
     {
         $total = $price * $count;
         if ($this->bells < $total) {
-            throw new \InvalidArgumentException('您的鈴錢不足，無法購買大頭菜。');
+            throw new InvalidArgumentException('您的鈴錢不足，無法購買大頭菜。');
         }
 
         $this->turnips += $count;
@@ -35,11 +39,13 @@ class Receiver
     /**
      * @param int $price
      * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
     public function sell(int $price, int $count)
     {
         if ($this->turnips < $count) {
-            throw new \InvalidArgumentException('您的大頭菜不足，無法販賣大頭菜。');
+            throw new InvalidArgumentException('您的大頭菜不足，無法販賣大頭菜。');
         }
 
         $total = $price * $count;

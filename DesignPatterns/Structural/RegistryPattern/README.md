@@ -97,6 +97,8 @@ class Turnips
 再來我們需要建立一個集中管理大頭菜的抽象註冊器，無論是找尋(find...)註冊、更新或刪除，這些事情都會集中在這裡實踐。
 
 ```php
+use InvalidArgumentException;
+
 /**
  * Abstract Registry.
  */
@@ -127,7 +129,6 @@ abstract class Registry
     /**
      * @param
      * 
-     * @throws InvalidArgumentException
      * @return Turnips|null
      */
     public static function findIndexByIsland(string $island)
@@ -201,6 +202,8 @@ abstract class Registry
 5. 測試大頭菜是否能夠被移除。
 
 ```php
+use InvalidArgumentException;
+
 /**
  * Class RegistryPatternTest.
  */
@@ -226,7 +229,7 @@ class RegistryPatternTest extends TestCase
      */
     public function test_registry_store_exception()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $turnips = new Turnips('Island_B', 100, 40);
         Registry::store($turnips);
@@ -271,7 +274,7 @@ class RegistryPatternTest extends TestCase
         Registry::store($turnips);
         $this->assertSame($turnips, Registry::findTurnipsByIsland('Island_D'));
 
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         Registry::destroy($turnips);
         Registry::findTurnipsByIsland('Island_D');
     }

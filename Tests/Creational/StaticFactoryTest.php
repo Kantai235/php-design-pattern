@@ -5,6 +5,7 @@ namespace Tests\Creational;
 use DesignPatterns\Creational\StaticFactory\Turnips;
 use DesignPatterns\Creational\StaticFactory\TurnipsFactory;
 use DesignPatterns\Creational\StaticFactory\SpoiledTurnips;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -59,11 +60,11 @@ class StaticFactoryTest extends TestCase
     /**
      * 測試是否能夠收到未知的大頭菜。
      * 
-     * @expectedException \InvalidArgumentException
+     * @test
      */
     public function testException()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         TurnipsFactory::factory('未知的大頭菜', 0, 0);
     }

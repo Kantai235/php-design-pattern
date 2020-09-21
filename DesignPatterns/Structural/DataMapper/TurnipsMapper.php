@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Structural\DataMapper;
 
+use InvalidArgumentException;
+
 /**
  * Class TurnipsMapper.
  */
@@ -25,6 +27,7 @@ class TurnipsMapper
     /**
      * @param int $id
      *
+     * @throws InvalidArgumentException
      * @return Turnips
      */
     public function findById(int $id): Turnips
@@ -32,7 +35,7 @@ class TurnipsMapper
         $result = $this->adapter->findById($id);
 
         if ($result === null) {
-            throw new \InvalidArgumentException("找不到 ID 為「 $id 」的島嶼。");
+            throw new InvalidArgumentException("找不到 ID 為「 $id 」的島嶼。");
         }
 
         return $this->mapRowToTurnips($result);
@@ -41,6 +44,7 @@ class TurnipsMapper
     /**
      * @param int $id
      *
+     * @throws InvalidArgumentException
      * @return Turnips
      */
     public function findByIsland(string $island): Turnips
@@ -48,7 +52,7 @@ class TurnipsMapper
         $result = $this->adapter->findByIsland($island);
 
         if ($result === null) {
-            throw new \InvalidArgumentException("找不到名稱為「 $island 」的島嶼。");
+            throw new InvalidArgumentException("找不到名稱為「 $island 」的島嶼。");
         }
 
         return $this->mapRowToTurnips($result);

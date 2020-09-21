@@ -112,6 +112,8 @@ class SpoiledTurnips implements TurnipsContract
 
 TurnipsFactory.php
 ```php
+use InvalidArgumentException;
+
 /**
  * Class TurnipsFactory.
  */
@@ -122,6 +124,7 @@ final class TurnipsFactory
      * @param int    $price
      * @param int    $count
      *
+     * @throws InvalidArgumentException
      * @return TurnipsContract
      */
     public static function factory(string $type, int $price, int $count): TurnipsContract
@@ -134,7 +137,7 @@ final class TurnipsFactory
             return new SpoiledTurnips($price, $count);
         }
 
-        throw new \InvalidArgumentException('找不到這種大頭菜分類。');
+        throw new InvalidArgumentException('找不到這種大頭菜分類。');
     }
 }
 ```
@@ -150,6 +153,8 @@ final class TurnipsFactory
 
 StaticFactoryTest.php
 ```php
+use InvalidArgumentException;
+
 /**
  * Class StaticFactoryTest.
  */
@@ -202,11 +207,11 @@ class StaticFactoryTest extends TestCase
     /**
      * 測試是否能夠收到未知的大頭菜。
      * 
-     * @expectedException \InvalidArgumentException
+     * @test
      */
     public function testException()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         TurnipsFactory::factory('未知的大頭菜', 0, 0);
     }

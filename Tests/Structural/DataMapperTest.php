@@ -5,6 +5,7 @@ namespace Tests\Structural;
 use DesignPatterns\Structural\DataMapper\StorageAdapter;
 use DesignPatterns\Structural\DataMapper\Turnips;
 use DesignPatterns\Structural\DataMapper\TurnipsMapper;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,7 +44,7 @@ class DataMapperTest extends TestCase
      */
     public function test_will_not_map_invalid_data()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $storage = new StorageAdapter([]);
         $mapper = new TurnipsMapper($storage);

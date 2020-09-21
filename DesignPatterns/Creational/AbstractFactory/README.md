@@ -130,6 +130,8 @@ interface FactoryContract
 
 BaseFactory.php
 ```php
+use InvalidArgumentException;
+
 /**
  * Class BaseFactory.
  */
@@ -140,6 +142,7 @@ abstract class BaseFactory implements FactoryContract
      * @param int    $price
      * @param int    $count
      * 
+     * @throws InvalidArgumentException
      * @return TurnipsContract
      */
     public function createTurnips(string $type, int $price, int $count): TurnipsContract
@@ -152,7 +155,7 @@ abstract class BaseFactory implements FactoryContract
             return new SpoiledTurnips($price, $count);
         }
 
-        throw new \InvalidArgumentException('找不到這種大頭菜分類。');
+        throw new InvalidArgumentException('找不到這種大頭菜分類。');
     }
 }
 ```

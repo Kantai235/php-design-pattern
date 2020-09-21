@@ -4,6 +4,7 @@ namespace Tests\Structural;
 
 use DesignPatterns\Structural\RegistryPattern\Registry;
 use DesignPatterns\Structural\RegistryPattern\Turnips;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -31,7 +32,7 @@ class RegistryPatternTest extends TestCase
      */
     public function test_registry_store_exception()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $turnips = new Turnips('Island_B', 100, 40);
         Registry::store($turnips);
@@ -76,7 +77,7 @@ class RegistryPatternTest extends TestCase
         Registry::store($turnips);
         $this->assertSame($turnips, Registry::findTurnipsByIsland('Island_D'));
 
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
         Registry::destroy($turnips);
         Registry::findTurnipsByIsland('Island_D');
     }

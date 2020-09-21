@@ -4,6 +4,7 @@ namespace Tests\Structural;
 
 use DesignPatterns\Structural\DependencyInjection\Turnips;
 use DesignPatterns\Structural\DependencyInjection\TurnipsConfiguration;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -44,7 +45,7 @@ class DependencyInjectionTest extends TestCase
      */
     public function test_undefined_dependency_injection()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $config = new TurnipsConfiguration('未知的大頭菜', 0, 0);
     }

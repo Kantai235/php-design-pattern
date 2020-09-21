@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Structural\DependencyInjection;
 
+use InvalidArgumentException;
+
 /**
  * Class TurnipsConfiguration.
  */
@@ -28,6 +30,8 @@ class TurnipsConfiguration
      * @param string $type
      * @param int $price
      * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
     public function __construct(string $type, int $price, int $count)
     {
@@ -45,7 +49,7 @@ class TurnipsConfiguration
                 break;
     
             default:
-                throw new \InvalidArgumentException('找不到這種大頭菜分類。');
+                throw new InvalidArgumentException('找不到這種大頭菜分類。');
         }
     }
 

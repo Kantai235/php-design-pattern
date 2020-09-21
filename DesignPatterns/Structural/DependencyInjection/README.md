@@ -11,6 +11,8 @@
 
 TurnipsConfiguration.php
 ```php
+use InvalidArgumentException;
+
 /**
  * Class TurnipsConfiguration.
  */
@@ -37,6 +39,8 @@ class TurnipsConfiguration
      * @param string $type
      * @param int $price
      * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
     public function __construct(string $type, int $price, int $count)
     {
@@ -54,7 +58,7 @@ class TurnipsConfiguration
                 break;
     
             default:
-                throw new \InvalidArgumentException('找不到這種大頭菜分類。');
+                throw new InvalidArgumentException('找不到這種大頭菜分類。');
         }
     }
 
@@ -126,6 +130,8 @@ class Turnips
 
 DependencyInjectionTest.php
 ```php
+use InvalidArgumentException;
+
 /**
  * Class DependencyInjectionTest.
  */
@@ -164,7 +170,7 @@ class DependencyInjectionTest extends TestCase
      */
     public function test_undefined_dependency_injection()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $config = new TurnipsConfiguration('未知的大頭菜', 0, 0);
     }

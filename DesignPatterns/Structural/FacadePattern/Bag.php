@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Structural\FacadePattern;
 
+use InvalidArgumentException;
+
 /**
  * Class Bag.
  */
@@ -27,7 +29,8 @@ class Bag implements BagInterface
         return $this->bells;
     }
 
-    /** 
+    /**
+     * @throws InvalidArgumentException
      * @return int
      */
     public function getBells(int $bells): int
@@ -37,7 +40,7 @@ class Bag implements BagInterface
             return $this->bells;
         }
 
-        throw new \InvalidArgumentException('背包裡頭沒有那麼多的鈴錢。');
+        throw new InvalidArgumentException('背包裡頭沒有那麼多的鈴錢。');
     }
 
     /** 
@@ -50,7 +53,8 @@ class Bag implements BagInterface
         return $this->turnips;
     }
 
-    /** 
+    /**
+     * @throws InvalidArgumentException
      * @return Turnips
      */
     public function getTurnips(int $count): Turnips
@@ -62,6 +66,6 @@ class Bag implements BagInterface
             return new Turnips($this->turnips->getPrice(), $count);
         }
 
-        throw new \InvalidArgumentException('背包裡頭沒有那麼多的大頭菜。');
+        throw new InvalidArgumentException('背包裡頭沒有那麼多的大頭菜。');
     }
 }

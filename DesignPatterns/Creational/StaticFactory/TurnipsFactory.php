@@ -2,6 +2,8 @@
 
 namespace DesignPatterns\Creational\StaticFactory;
 
+use InvalidArgumentException;
+
 /**
  * Class TurnipsFactory.
  */
@@ -12,6 +14,7 @@ final class TurnipsFactory
      * @param int    $price
      * @param int    $count
      *
+     * @throws InvalidArgumentException
      * @return TurnipsContract
      */
     public static function factory(string $type, int $price, int $count): TurnipsContract
@@ -24,6 +27,6 @@ final class TurnipsFactory
             return new SpoiledTurnips($price, $count);
         }
 
-        throw new \InvalidArgumentException('找不到這種大頭菜分類。');
+        throw new InvalidArgumentException('找不到這種大頭菜分類。');
     }
 }
