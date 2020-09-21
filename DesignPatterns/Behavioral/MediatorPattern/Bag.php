@@ -47,6 +47,7 @@ class Bag extends Colleague
      */
     public function setBells(int $bells)
     {
+        echo "[背包] 剩下 $bells 鈴錢。";
         $this->bells->setBells($bells);
     }
 
@@ -55,6 +56,7 @@ class Bag extends Colleague
      */
     public function setTurnips(int $count)
     {
+        echo "[背包] 剩下 $count 顆大頭菜。";
         $this->turnips->setCount($count);
     }
 }

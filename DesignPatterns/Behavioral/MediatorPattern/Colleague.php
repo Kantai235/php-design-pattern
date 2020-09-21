@@ -10,12 +10,12 @@ abstract class Colleague
     /**
      * @var Mediator
      */
-    protected Mediator $mediator;
+    protected MediatorInterface $mediator;
 
     /**
      * @param Mediator $mediator
      */
-    public function setMediator(Mediator $mediator)
+    public function setMediator(MediatorInterface $mediator)
     {
         $this->mediator = $mediator;
     }

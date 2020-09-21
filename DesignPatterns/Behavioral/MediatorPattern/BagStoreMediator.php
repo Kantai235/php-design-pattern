@@ -2,10 +2,12 @@
 
 namespace DesignPatterns\Behavioral\MediatorPattern;
 
+use InvalidArgumentException;
+
 /**
  * Class BagStoreMediator.
  */
-class BagStoreMediator implements Mediator
+class BagStoreMediator implements MediatorInterface
 {
     /**
      * @var Bag
@@ -35,11 +37,27 @@ class BagStoreMediator implements Mediator
     /**
      * @return int
      */
+    public function getBells(): int
+    {
+        return $this->bag->getBells();
+    }
+
+    /**
+     * @return int
+     */
     public function getTurnips(): int
     {
         return $this->bag->getTurnips();
     }
-    
+
+    /**
+     * @param int $bells
+     */
+    public function setBells(int $bells)
+    {
+        $this->bag->setBells($bells);
+    }
+
     /**
      * @param int $count
      */
@@ -49,18 +67,40 @@ class BagStoreMediator implements Mediator
     }
 
     /**
-     * @return int
+     * @param int $price
+     * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
-    public function getBells(): int
+    public function buyTurnips(int $price, int $count)
     {
-        return $this->bag->getBells();
+        $total = $price * $count;
+        if ($this->bag->getBells() >= $total) {
+            echo "[玩家] 您購買了 $count 顆大頭菜，每顆單價 $price 鈴錢，總共 $total 鈴錢。";
+            $this->store->buyTurnips($price, $count);
+
+            return;
+        }
+
+        throw new InvalidArgumentException('[錯誤] 您的大頭菜不足，無法購買大頭菜。');
     }
 
     /**
-     * @param int $bells
+     * @param int $price
+     * @param int $count
+     * 
+     * @throws InvalidArgumentException
      */
-    public function setBells(int $bells)
+    public function sellTurnips(int $price, int $count)
     {
-        $this->bag->setBells($bells);
+        $total = $price * $count;
+        if ($this->bag->getTurnips() >= $count) {
+            echo "[玩家] 您販賣了 $count 顆大頭菜，每顆單價 $price 鈴錢，總共 $total 鈴錢。";
+            $this->store->sellTurnips($price, $count);
+
+            return;
+        }
+
+        throw new InvalidArgumentException('[錯誤] 您的大頭菜不足，無法販賣大頭菜。');
     }
 }

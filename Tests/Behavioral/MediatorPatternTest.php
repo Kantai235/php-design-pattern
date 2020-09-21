@@ -5,6 +5,7 @@ namespace Tests\Behavioral;
 use DesignPatterns\Behavioral\MediatorPattern\Bag;
 use DesignPatterns\Behavioral\MediatorPattern\BagStoreMediator;
 use DesignPatterns\Behavioral\MediatorPattern\Store;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,26 +14,13 @@ use PHPUnit\Framework\TestCase;
 class MediatorPatternTest extends TestCase
 {
     /**
-     * @var BagStoreMediator
-     */
-    protected $mediator;
-
-    /**
-     * @return void
-     */
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->mediator = new BagStoreMediator(new Bag(), new Store());
-        $this->mediator->setBells(10000);
-    }
-
-    /**
      * @test
      */
     public function test_buy_and_sell_turnips()
     {
+        $mediator = new BagStoreMediator(new Bag(), new Store());
+        $mediator->setBells(10000);
+
         $this->expectOutputString(implode(array(
             "[背包] 剩下 10000 鈴錢。",
             "[玩家] 您購買了 40 顆大頭菜，每顆單價 100 鈴錢，總共 4000 鈴錢。",
@@ -47,8 +35,8 @@ class MediatorPatternTest extends TestCase
             "[背包] 剩下 10000 鈴錢。",
         )));
 
-        $this->mediator->buyTurnips(100, 40);
-        $this->mediator->sellTurnips(200, 20);
+        $mediator->buyTurnips(100, 40);
+        $mediator->sellTurnips(200, 20);
     }
 
     /**
@@ -56,10 +44,20 @@ class MediatorPatternTest extends TestCase
      */
     public function test_buy_turnips_overflow()
     {
-        
+        $this->expectException(InvalidArgumentException::class);
 
-        $this->mediator->buyTurnips(100, 40);
-        $this->mediator->buyTurnips(100, 40);
-        $this->mediator->buyTurnips(100, 40);
+        $mediator = new BagStoreMediator(new Bag(), new Store());
+        $mediator->buyTurnips(100, 200);
+    }
+
+    /**
+     * @test
+     */
+    public function test_sell_turnips_overflow()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $mediator = new BagStoreMediator(new Bag(), new Store());
+        $mediator->sellTurnips(100, 40);
     }
 }
