@@ -198,8 +198,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 原型模式](https://kantai235.github.io/PrototypePattern)
-- [原型模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PrototypePattern)
-- [原型模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/PrototypePatternTest.php)
+- [原型模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/PrototypePattern)
+- [原型模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/PrototypePatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

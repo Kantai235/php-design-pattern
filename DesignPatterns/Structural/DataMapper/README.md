@@ -272,8 +272,8 @@ OK (36 tests, 83 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 資料對應](https://kantai235.github.io/DataMapper)
-- [資料對應 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/DataMapper)
-- [資料對應 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/DataMapperTest.php)
+- [資料對應 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/DataMapper)
+- [資料對應 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/DataMapperTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

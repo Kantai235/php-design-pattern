@@ -118,8 +118,8 @@ OK (43 tests, 94 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 流暢介面](https://kantai235.github.io/FluentInterface)
-- [流暢介面 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/FluentInterface)
-- [流暢介面 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/FluentInterfaceTest.php)
+- [流暢介面 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/FluentInterface)
+- [流暢介面 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/FluentInterfaceTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

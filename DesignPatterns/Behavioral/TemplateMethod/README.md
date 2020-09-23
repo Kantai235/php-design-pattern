@@ -48,8 +48,8 @@ OK (51 tests, 116 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 模板方法](https://kantai235.github.io/TemplateMethod)
-- [模板方法 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/TemplateMethod)
-- [模板方法 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Behavioral/TemplateMethodTest.php)
+- [模板方法 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Behavioral/TemplateMethod)
+- [模板方法 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Behavioral/TemplateMethodTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

@@ -209,8 +209,8 @@ OK (41 tests, 88 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 依賴注入](https://kantai235.github.io/DependencyInjection)
-- [依賴注入 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/DependencyInjection)
-- [依賴注入 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Structural/DependencyInjectionTest.php)
+- [依賴注入 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Structural/DependencyInjection)
+- [依賴注入 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Structural/DependencyInjectionTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)

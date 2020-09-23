@@ -227,8 +227,8 @@ OK (24 tests, 68 assertions)
 ## 完整程式碼
 [設計模式不難，找回快樂而已，以大頭菜為例。](https://github.com/Kantai235/php-design-pattern)
 - [技術部落格文章 - 物件池模式](https://kantai235.github.io/PoolPattern)
-- [物件池模式 原始碼](https://github.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/PoolPattern)
-- [物件池模式 測試](https://github.com/Kantai235/php-design-pattern/master/Tests/Creational/PoolPatternTest.php)
+- [物件池模式 原始碼](https://github.com/Kantai235/php-design-pattern/tree/master/DesignPatterns/Creational/PoolPattern)
+- [物件池模式 測試](https://github.com/Kantai235/php-design-pattern/tree/master/Tests/Creational/PoolPatternTest.php)
 
 ## 參考文獻
 - [DesignPatternsPHP](https://github.com/domnikl/DesignPatternsPHP)
