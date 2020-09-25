@@ -128,7 +128,7 @@ class TurnipsPool implements Countable
 ### Countable
 繼承 `Countable` 這個類別可以使用 `count()` 這個方法，因此需要實作它。
 ```php
-class Countable {
+Countable {
     /* Methods */
     abstract public count ( void ) : int
 }

@@ -202,7 +202,7 @@ class Bag implements Countable, Iterator
 ### Countable
 繼承 `Countable` 這個類別可以使用 `count()` 這個方法，因此需要實作它。
 ```php
-class Countable {
+Countable {
     /* Methods */
     abstract public count ( void ) : int
 }
@@ -212,7 +212,7 @@ class Countable {
 ### Iterator
 繼承 `Iterator` 這個類別可以使用 `current()`、`key()`、`next()`、`rewind()`、`valid()` 這些方法，因此需要實作它們。
 ```php
-class Iterator extends Traversable {
+Iterator extends Traversable {
     /* Methods */
     abstract public current ( void ) : mixed
     abstract public key ( void ) : scalar
