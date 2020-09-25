@@ -1,13 +1,66 @@
 ![Banner](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ObserverPattern/Banner.png)
 
 # 觀察者模式 Observer Pattern
-觀察者模式，
+觀察者模式，一種現在全中國都知道你來了的模式，
+
+![現在全中國都知道你來了](https://memes.tw/user-template/7a3ef7817e20b4329ca542fb154db593.png)
 
 ## UML
 ![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Behavioral/ObserverPattern/UML.png)
 
 ## 實作
 
+## 額外補充
+### SplSubject
+繼承 `SplSubject` 這個類別會需要實作 `attach`、`detach` 及 `notify` 這三個方法，`attach` 會需要賦予 `SplObserver` 觀察者物件，而 `detach` 則是抽離 `` 
+```php
+SplSubject {
+    /* Methods */
+    abstract public attach ( SplObserver $observer ) : void
+    abstract public detach ( SplObserver $observer ) : void
+    abstract public notify ( void ) : void
+}
+```
+- 官方文件：[PHP: SplSubject - Manual](https://www.php.net/manual/en/class.splsubject.php)
+
+### SplObserver
+繼承 `SplObserver` 這個類別 bla bla bla ...
+```php
+SplObserver {
+    /* Methods */
+    abstract public update ( SplSubject $subject ) : void
+}
+```
+- 官方文件：[PHP: SplObserver - Manual](https://www.php.net/manual/en/class.splobserver.php)
+
+### SplObjectStorage
+```php
+SplObjectStorage implements Countable , Iterator , Serializable , ArrayAccess {
+    /* Methods */
+    public addAll ( SplObjectStorage $storage ) : void
+    public attach ( object $object [, mixed $data = NULL ] ) : void
+    public contains ( object $object ) : bool
+    public count ( void ) : int
+    public current ( void ) : object
+    public detach ( object $object ) : void
+    public getHash ( object $object ) : string
+    public getInfo ( void ) : mixed
+    public key ( void ) : int
+    public next ( void ) : void
+    public offsetExists ( object $object ) : bool
+    public offsetGet ( object $object ) : mixed
+    public offsetSet ( object $object [, mixed $data = NULL ] ) : void
+    public offsetUnset ( object $object ) : void
+    public removeAll ( SplObjectStorage $storage ) : void
+    public removeAllExcept ( SplObjectStorage $storage ) : void
+    public rewind ( void ) : void
+    public serialize ( void ) : string
+    public setInfo ( mixed $data ) : void
+    public unserialize ( string $serialized ) : void
+    public valid ( void ) : bool
+}
+```
+- 官方文件：[PHP: SplObjectStorage - Manual](https://www.php.net/manual/en/class.splobjectstorage.php)
 
 ## 測試
 
