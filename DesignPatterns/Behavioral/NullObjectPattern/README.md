@@ -140,6 +140,7 @@ class Player
     protected NPC $npc;
 
     /**
+     * Player constructor.
      * 
      * @param NPC $npc
      */
