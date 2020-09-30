@@ -12,11 +12,6 @@ use SplSubject;
 class Player implements SplSubject
 {
     /**
-     * @var string
-     */
-    protected string $email;
-
-    /**
      * @var SplObjectStorage
      */
     protected SplObjectStorage $observers;
