@@ -7,17 +7,19 @@ use SplObserver;
 use SplSubject;
 
 /**
- * Class Player.
+ * Class Island.
  */
-class Player implements SplSubject
+class Island implements SplSubject
 {
     /**
+     * 用來存放觀察者名單。
+     * 
      * @var SplObjectStorage
      */
     protected SplObjectStorage $observers;
 
     /**
-     * Player constructor.
+     * Island constructor.
      */
     public function __construct()
     {
@@ -31,6 +33,7 @@ class Player implements SplSubject
      */
     public function attach(SplObserver $observer)
     {
+        $this->sendMessages("有玩家加入了！");
         $this->observers->attach($observer);
     }
 
@@ -42,31 +45,26 @@ class Player implements SplSubject
     public function detach(SplObserver $observer)
     {
         $this->observers->detach($observer);
+        $this->sendMessages("有玩家離開了！");
     }
 
     /**
-     * 通知觀察者，讓全島民都知道你來了。
+     * 通知觀察者。
      */
     public function notify()
     {
         foreach ($this->observers as $observer) {
-            $observer->update($this);
+            $observer->update();
         }
     }
 
     /**
-     * 
+     * @param string $message
      */
-    public function join()
+    public function sendMessages(string $message)
     {
-        $this->notify();
-    }
-
-    /**
-     * 
-     */
-    public function quit()
-    {
-        $this->notify();
+        foreach ($this->observers as $observer) {
+            $observer->sendMessage($message);
+        }
     }
 }

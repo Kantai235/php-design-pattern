@@ -2,9 +2,7 @@
 
 namespace Tests\Behavioral;
 
-use DesignPatterns\Behavioral\ObserverPattern\User;
-use DesignPatterns\Behavioral\ObserverPattern\UserObserver;
-use DesignPatterns\Behavioral\ObserverPattern\Player;
+use DesignPatterns\Behavioral\ObserverPattern\Island;
 use DesignPatterns\Behavioral\ObserverPattern\PlayerObserver;
 use PHPUnit\Framework\TestCase;
 
@@ -18,22 +16,48 @@ class ObserverPatternTest extends TestCase
      */
     public function test_observer()
     {
-        $observer = new PlayerObserver();
+        $this->expectOutputString(implode(array(
+            "[Player A 收到通知] 有玩家加入了！",
+            "[Player A 收到通知] 有玩家加入了！",
+            "[Player B 收到通知] 有玩家加入了！",
+            "[Player A 收到通知] 有玩家離開了！",
+            "[Player C 收到通知] 有玩家離開了！",
+        )));
+        
+        /**
+         * 建立一個島嶼
+         */
+        $island = new Island();
 
-        $playerA = new Player('Island_A');
-        $playerB = new Player('Island_B');
-        $playerC = new Player('Island_C');
+        /**
+         * Player A 加入了這座島嶼
+         * 加入前島上沒有玩家
+         * 所以沒有叮咚通知
+         */
+        $playerA = new PlayerObserver('Player A');
+        $island->attach($playerA);
 
-        $playerA->attach($observer);
-        $playerB->attach($observer);
-        $playerC->attach($observer);
+        /**
+         * Player B 加入了這座島嶼
+         * 加入前島上有 1 位玩家
+         * 扣除自己後，會有 A 收到叮咚通知
+         */
+        $playerB = new PlayerObserver('Player B');
+        $island->attach($playerB);
 
-        $playerA->join(); // [系統] Island_A 飛來了。
-        $playerB->join(); // [系統] Island_B 飛來了。
-        $playerC->join(); // [系統] Island_C 飛來了。
+        /**
+         * Player C 加入了這座島嶼
+         * 加入前島上有 2 位玩家
+         * 扣除自己後，會有 A、B 收到叮咚通知
+         */
+        $playerC = new PlayerObserver('Player C');
+        $island->attach($playerC);
 
-        $playerB->quit(); // [系統] Island_B 離開了。
-
-        // $observer 應該要剩餘 2 位玩家
+        /**
+         * Island_B 離開了這座島嶼
+         * 離開前島上有 3 位玩家
+         * 扣除自己後，會有 A、C 收到叮咚通知
+         */
+        $island->detach($playerB);
     }
 }
