@@ -7,7 +7,7 @@
 ![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Creational/SimpleFactory/UML.png)
 
 ## 實作
-在建立大頭菜工廠之前，我們要先定義大頭菜出來，順便寫上一些功能，像是購買大頭菜、計算大頭菜的價格，這樣工廠才會知道自己要生產什麼。
+在建立大頭菜工廠之前，我們要先定義大頭菜出來，順便寫上一些功能，像是購買大頭菜、計算大頭菜的價格，這樣工廠才會知道自己要生產什麼。
 
 Turnips.php
 ```php

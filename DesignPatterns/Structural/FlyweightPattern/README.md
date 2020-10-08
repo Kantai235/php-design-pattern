@@ -7,7 +7,7 @@
 ![UML](https://raw.githubusercontent.com/Kantai235/php-design-pattern/master/DesignPatterns/Structural/FlyweightPattern/UML.png)
 
 ## 實作
-首先我們須要先定義大頭菜作為共享目標，紀錄了島嶼、鈴錢以及數量，並且提供了簡單的計算總價方法。
+首先我們須要先定義大頭菜作為共享目標，紀錄了島嶼、鈴錢以及數量，並且提供了簡單的計算總價方法。
 
 FlyweightInterface.php
 ```php
@@ -66,7 +66,7 @@ class TurnipsFlyweight implements FlyweightInterface
 }
 ```
 
-再來製作享元工廠，主要負責建立、管理大頭菜共享物件，以及提供基本功能，例如計算全部大頭菜總鈴錢的方法。
+再來製作享元工廠，主要負責建立、管理大頭菜共享物件，以及提供基本功能，例如計算全部大頭菜總鈴錢的方法。
 
 FlyweightFactory.php
 ```php
